@@ -14,7 +14,7 @@ There are two possible ways to submit your project. Your instructor should have 
 
 #### Option A - Codegrade
 
-- [ ] Fork and clone the repository.
+- [NA] Fork and clone the repository.
 - [ ] Open the assignment in Canvas and click on the "Set up git" option.
 - [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
 - [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
@@ -22,17 +22,17 @@ There are two possible ways to submit your project. Your instructor should have 
 
 #### Option B - Pull Request
 
-- [ ] Fork and clone the repository.
-- [ ] Implement your project in a `firstname-lastname` branch.
-- [ ] Create a pull request of `firstname-lastname` against your `main` branch.
-- [ ] Open the assignment in Canvas and submit your pull request.
+- [X] Fork and clone the repository.
+- [X] Implement your project in a `firstname-lastname` branch.
+- [X] Create a pull request of `firstname-lastname` against your `main` branch.
+- [X] Open the assignment in Canvas and submit your pull request.
 
 ### Task 2: Minimum Viable Product
 
 ### 2.1 Write Basic SQL Queries
 
 Visit [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/trysql.asp?filename=trysql_select_all) using Chrome and build the queries below. Once they work copy them to the `queries.sql` file at the root of the project.
-
+[X]SQL part COMPLETE (MVP)
 - Find all customers with postal code 1010. Returns 3 records.
 - Find the phone number for the supplier with the id 11. Should be (010) 9984510.
 - List first 10 orders placed, sorted descending by the order date. The order with date 1997-02-12 should be at the top.
