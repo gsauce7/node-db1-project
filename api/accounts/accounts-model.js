@@ -2,48 +2,50 @@ const db = require("../../data/db-config")
 
 const getAll = () => {
   // DO YOUR MAGIC
-  return db("accounts") // select * from accounts
+  return db("accounts"); // select * from accounts and return all
 
-}
+};
 
 
-const getById = id => {
+const getById = (id) => {
   // DO YOUR MAGIC
   // select * from accounts where id = userProvidedId
   return db("accounts").where("id", id).first()
   // return db("accounts").where("id", id)
 
-}
-
-
-// const create = account => {
-//   // DO YOUR MAGIC
-// }
-async function create({ name, budget }) {
-  const [id] = await db("accounts").insert({ name, budget })
-  return getById(id)
-}
+};
 
 
 
-// const updateById = (id, account) => {
-//   // DO YOUR MAGIC
-// }
+const create = async (account) => {
+  const [id] = await db("accounts").insert(account);
+  return getById(id);
+};
 
-async function updateById(id, { name, budget }) {
-  await db("accounts").where("id", id).update({ name, budget })
-  return getById(id)
-}
 
-// const deleteById = id => {
-//   // DO YOUR MAGIC
-// }
+const updateById = async (id, account) => {
+  // DO YOUR MAGIC
+  await db("accounts").where("id", id).update(account);
+  return getById(id);
+};
 
-async function deleteById(id) {
-  const deletedAccount = await getById(id)
-  await db("accounts").where("id", id).delete()
-  return deletedAccount
-}
+
+const deleteById = async (id) => {
+  // DO YOUR MAGIC
+  const deletedAccount = await getById(id);
+  await db("accounts").where("id", id).delete();
+  return deletedAccount;
+};
+
+// const findByName = async (name) => {
+//   const foundByName = await db("accounts").where("name", name);
+//   const foundByName = foundByName.toString();
+//   return foundByName;
+// };
+
+const findByName = (name) => {
+  return db("accounts").where("name", name);
+};
 
 module.exports = {
   getAll,
@@ -51,4 +53,5 @@ module.exports = {
   create,
   updateById,
   deleteById,
-}
+  findByName
+};
