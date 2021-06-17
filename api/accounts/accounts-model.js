@@ -37,21 +37,11 @@ const deleteById = async (id) => {
   return deletedAccount;
 };
 
-// const findByName = async (name) => {
-//   const foundByName = await db("accounts").where("name", name);
-//   const foundByName = foundByName.toString();
-//   return foundByName;
-// };
-
-const findByName = (name) => {
-  return db("accounts").where("name", name);
-};
 
 module.exports = {
   getAll,
   getById,
   create,
   updateById,
-  deleteById,
-  findByName
+  deleteById
 };

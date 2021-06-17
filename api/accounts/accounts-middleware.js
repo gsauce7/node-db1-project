@@ -19,18 +19,14 @@ const checkAccountPayload = (req, res, next) => {
 };
 
 
+
 const checkAccountNameUnique = async (req, res, next) => {
-  try {
-    const exists = await Account.findByName(req.body.name);
-    if (exists === req.body.name.trim()) {
-      res.status(400).json({ message: "name is taken" });
-    } else {
-      next();
-    }
-  } catch (err) {
-    next(err);
+  const allAccts = await Account.getAll()
+  if (allAccts.some(account => account.name == req.body.name.trim() && account.id != req.params.id)) {
+    return res.status(400).json({ message: "name is taken" })
   }
-};
+  next()
+}
 
 
 
